@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="body">
+        <div class="mainSection">
+            <div class="sideBar">
+            </div>
+            <div class="loginContent">
+                <h1>Login to your Account</h1>
+                <form action="{% url 'main:login' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="fieldWrapper">
+                        <label for="email">EMAIL</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div class="fieldWrapper">
+                        <label for="password">PASSWORD</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <input type="submit" value="Sign In">
+                </form>
+                <button>Continue with Google</button>
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
